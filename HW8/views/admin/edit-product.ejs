@@ -1,0 +1,12 @@
+ <%- include("../partials/head.ejs",{PageTitle:title}) %>
+ <%- include("../partials/nav.ejs")%>
+ <form method="post" action="/admin/edit-product">
+    <label for="name" >Name:</label><input type="text" name="name" value="<%= prod.name%>" id="name"><br>
+    <label for="description" >Description:</label>
+        <input type="text" name="description" value="<%= prod.description%>" id="description"><br>
+    <label for="price" >Price:</label><input  type="number" name="price" value="<%= prod.price%>" id="price"><br>
+    <input type="hidden" name="productId" value="<%= prod._id%>">
+    <button class="btn btn-primary" type="submit">Save Product</button>
+ </form>
+
+<%- include("../partials/footer.ejs") %>
